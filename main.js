@@ -1,5 +1,7 @@
 function clickedBox1() {
-    window.location.href = "../MAIN/QuranVideos/index.html";
+   const base = window.location.pathname.split('/')[1]; 
+   window.location.href = `/${base}/MAIN/QuranVideos/index.html`;
+
 
 }
 
