@@ -33,6 +33,15 @@ body{
     animation: fadeIn 2s ease-in-out;
 }
 
+video {
+  width: 600px;
+  max-width: 200%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
 
 video:hover{
     transform: scale(1.05);

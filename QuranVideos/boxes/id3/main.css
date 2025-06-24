@@ -113,6 +113,14 @@ video:hover{
     align-items: center;
     gap: 20px;
   }
+  video {
+  width: 600px;
+  max-width: 200%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
 
   .box {
     width: 90%;
