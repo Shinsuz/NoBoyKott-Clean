@@ -1,20 +1,21 @@
 function clickedBox1() {
    const base = window.location.pathname.split('/')[1]; 
    window.location.href = `/${base}/MAIN/QuranVideos/index.html`;
-
-
 }
 
 function clickedBox2(){
-    window.location.href = "../MAIN/Nasheeds/index.html";
+    const base = window.location.pathname.split('/')[1];
+    window.location.href = `/${base}/MAIN/QuranVideos/index.html`;
 }
 
 function clickedBox3(){
-    window.location.href = "../MAIN/Wissen/index.html";
+    const base = window.location.pathname.split('/')[1];
+    window.location.href = `/${base}/MAIN/QuranVideos/index.html`;
 }
 
 function clickedBox4(){
-    window.location.href = "../MAIN/Empfehlungen/index.html";
+     const base = window.location.pathname.split('/')[1];
+    window.location.href = `/${base}/MAIN/QuranVideos/index.html`;
 }
 
 // Speichern der Buttonfunktion (!nicht ganz verstanden!)
