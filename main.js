@@ -5,17 +5,17 @@ function clickedBox1() {
 
 function clickedBox2(){
     const base = window.location.pathname.split('/')[1];
-    window.location.href = `/${base}/QuranVideos/index.html`;
+    window.location.href = `/${base}/Nasheeds/index.html`;
 }
 
 function clickedBox3(){
     const base = window.location.pathname.split('/')[1];
-    window.location.href = `/${base}/QuranVideos/index.html`;
+    window.location.href = `/${base}/Wissen/index.html`;
 }
 
 function clickedBox4(){
      const base = window.location.pathname.split('/')[1];
-    window.location.href = `/${base}/QuranVideos/index.html`;
+    window.location.href = `/${base}/Empfehlungen/index.html`;
 }
 
 // Speichern der Buttonfunktion (!nicht ganz verstanden!)
