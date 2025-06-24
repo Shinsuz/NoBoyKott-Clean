@@ -41,5 +41,7 @@ loopBtn.addEventListener('click', function() {
   if (currentVideo) {
     currentVideo.loop = !currentVideo.loop;
     loopBtn.textContent = currentVideo.loop ? "🔁 Loop: An" : "🔁 Loop: Aus";
+  } else {
+    alert("Bitte starte zuerst ein Video, um Loop zu aktivieren.");
   }
 });
