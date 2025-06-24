@@ -33,6 +33,16 @@ body{
     animation: fadeIn 2s ease-in-out;
 }
 
+video {
+  width: 600px;
+  max-width: 200%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+
 
 video:hover{
     transform: scale(1.05);
@@ -61,7 +71,6 @@ video:hover{
     cursor: pointer;
 }
 .exPlayer {
-    position: fixed;
     left: 0px;    
     top: -50px;      
     z-index: 1000;
@@ -84,8 +93,7 @@ video:hover{
   background: linear-gradient(90deg, #2b5876 0%, #4e4376 100%);
   color: #fff;
   border: none;
-  border-radius: 18px;
-  padding: 8px 22px;
+  border-radius: 18px;;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -102,6 +110,12 @@ video:hover{
   box-shadow: 0 4px 16px rgba(43,88,118,0.18);
 }
 
+#loopBtn {
+  position: absolute;
+  left: 0;
+  top: -40px; /* Abstand über der Linie, anpassen nach Bedarf */
+}
+
 @media (max-width: 768px) {
   body {
     font-size: 16px;
@@ -113,6 +127,7 @@ video:hover{
     align-items: center;
     gap: 20px;
   }
+
   video {
   width: 600px;
   max-width: 200%;
