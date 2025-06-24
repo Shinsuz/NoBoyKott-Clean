@@ -18,6 +18,8 @@ loopBtn.addEventListener('click', function() {
   if (currentAudio) {
     currentAudio.loop = !currentAudio.loop;
     loopBtn.textContent = currentAudio.loop ? "🔁 Loop: An" : "🔁 Loop: Aus";
+  } else {
+    alert("Bitte spiele zuerst ein Audio ab, um die Loop-Funktion zu nutzen.");
   }
 });
 
