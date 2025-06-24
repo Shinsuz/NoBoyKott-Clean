@@ -1,0 +1,115 @@
+html{
+    scroll-behavior: smooth;
+}
+
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+h1{
+    font-family: "Cormorant Garamond", serif;
+    color: steelblue;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Chat-artiges Design für Empfehlungen */
+
+body {
+    background: linear-gradient(to bottom, #2C3E50, #1A252F);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 420px;
+    margin: 40px auto;
+    background: rgba(255,255,255,0.10);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(44,62,80,0.25);
+    padding: 24px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#inputField {
+    border-radius: 20px;
+    border: none;
+    padding: 12px 18px;
+    font-size: 1rem;
+    outline: none;
+    margin-bottom: 0;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+    width: 100%;
+    cursor: text;
+}
+
+#saveBtn {
+    border-radius: 20px;
+    border: none;
+    background: steelblue;
+    color: white;
+    padding: 10px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 8px;
+    align-self: flex-end;
+    transition: background 0.2s;
+}
+
+#saveBtn:hover {
+    background: #1A252F;
+}
+
+#list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+#list li {
+    align-self: flex-end;
+    background: linear-gradient(120deg, #6dd5ed 0%, #2193b0 100%);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 18px 18px 4px 18px;
+    max-width: 80%;
+    word-break: break-word;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    font-size: 1rem;
+    animation: chatIn 0.4s;
+}
+
+@keyframes chatIn {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.line{
+    border: none;
+    margin: 24px 0;
+    height: 0;
+    color: burlywood;
+}
+
+.home{
+    position: fixed;
+    top: 0;
+    height: 30px;
+    width: 30px;
+    right: 5px;
+    background: transparent;
+}
+.home:hover{
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
