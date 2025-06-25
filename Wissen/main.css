@@ -104,11 +104,34 @@ body{
 }
 
 @media (max-width: 600px) {
+    body {
+        padding: 0 2px;
+    }
+    .suchbereich {
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
     #wissenContent {
-        padding: 12px 6px;
+        padding: 8px 2px;
+        margin-top: 12px;
+        max-height: 60vh;
+        border-radius: 8px;
+        gap: 10px;
     }
     #wissenContent p {
-        padding: 10px 8px;
-        font-size: 1rem;
+        padding: 8px 6px;
+        font-size: 0.98rem;
+        border-radius: 6px;
+    }
+    h1 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    .home {
+        top: 6px;
+        right: 6px;
+        width: 22px;
+        height: 22px;
     }
 }
