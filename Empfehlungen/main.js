@@ -29,7 +29,7 @@ function sendToDiscord(msg) {
     fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: msg })
+        body: JSON.stringify({content: msg })
     });
 }
 
