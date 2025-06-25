@@ -1,17 +1,32 @@
 let Empfehlungen = [];
 window.GespeicherteEmpfehlungen = [];
+let EmpfehlungCounter = {}; // Zähler für jede Empfehlung
 
 function click1() {
     const input = document.getElementById("inputField");
     const value = input.value.trim();
-    if (value) {
-        Empfehlungen.push(value);
-        window.GespeicherteEmpfehlungen.push(value);
-        input.value = "";
-        renderList();
-        sendToDiscord("Neue Empfehlung: " + value);
-        alert("Empfehlung gespeichert!");
+    if (!value) return;
+
+    // Zähler erhöhen
+    if (EmpfehlungCounter[value]) {
+        EmpfehlungCounter[value]++;
+    } else {
+        EmpfehlungCounter[value] = 1;
     }
+
+    Empfehlungen.push(value);
+    window.GespeicherteEmpfehlungen.push(value);
+    input.value = "";
+    renderList();
+
+    // Nachricht mit Zähler an Discord senden
+    const count = EmpfehlungCounter[value];
+    const msg = count > 1
+        ? `Empfehlung: ${value} (${count}x)`
+        : `Empfehlung: ${value}`;
+    sendToDiscord(msg);
+
+    alert("Empfehlung gespeichert!");
 }
 
 function renderList() {
@@ -29,9 +44,6 @@ function sendToDiscord(msg) {
     fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({content: msg })
+        body: JSON.stringify({content: msg})
     });
-}
-
-// Im click1() nach renderList():
-sendToDiscord(value);
+}   
