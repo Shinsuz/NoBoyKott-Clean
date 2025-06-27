@@ -20,32 +20,78 @@ body{
     transition: background-color 0.3s, color 0.3s;
 }
 
-.container{
-    display: flex;
-    gap: 30px;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
 }
 
-.box{
-    border-radius: 10px;
-    height: 200px;
-    width: 340px;
-    margin: 50px;
-    background-color: lightslategrey;
-    color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    transition: transform 0.2s, background-color 0.2s;
-    animation: fadeIn 2s ease-in-out;
-    cursor: pointer;
+.box {
+  background: rgba(40, 48, 72, 0.55);
+  border-radius: 28px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37), 0 0 0 4px #4e54c8, 0 0 32px 0 #8f94fb;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 48px 56px;
+  min-width: 240px;
+  min-height: 110px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 
+    transform 0.22s cubic-bezier(.4,2,.6,1), 
+    box-shadow 0.22s cubic-bezier(.4,2,.6,1),
+    background 0.4s;
 }
 
+.box::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #8f94fb 0%, transparent 70%);
+  opacity: 0.25;
+  z-index: 0;
+  transition: opacity 0.3s;
+}
 
-.box:hover{
-    transform: scale(1.1);
-    background-color: lightskyblue;
-    
+.box::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #4e54c8 0%, transparent 70%);
+  opacity: 0.18;
+  z-index: 0;
+  transition: opacity 0.3s;
+}
+
+.box:hover {
+  transform: translateY(-14px) scale(1.06) rotate(-2deg);
+  box-shadow: 0 16px 48px 0 #8f94fb, 0 0 0 6px #4e54c8, 0 0 64px 0 #8f94fb;
+  background: rgba(78, 84, 200, 0.75);
+}
+
+.box:active {
+  transform: scale(0.97);
+}
+
+.box span {
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #4e54c8, 0 0px 2px #000;
 }
 
 .line{
@@ -78,16 +124,16 @@ body{
 
   .container {
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 22px;
+    margin-top: 24px;
+  }
+  .box {
+    min-width: 0;
+    width: 92vw;
+    padding: 28px 0;
+    font-size: 1.1rem;
   }
 
-  .box {
-    width: 90%;
-    height: 160px;
-    margin: 20px 0;
-    font-size: 18px;
-  }
 
   h1 {
     text-align: center;
