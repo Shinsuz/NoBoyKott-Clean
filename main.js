@@ -14,9 +14,14 @@ function clickedBox3(){
 }
 
 function clickedBox4(){
-     const base = window.location.pathname.split('/')[1];
+    const base = window.location.pathname.split('/')[1];
     window.location.href = `/${base}/Empfehlungen/index.html`;
 }
+function clickedBox5(){
+    const base = window.location.pathname.split('/')[1];
+    window.location.href = `/${base}/Hadithe/index.html`;
+}
+
 
 // Speichern der Buttonfunktion (!nicht ganz verstanden!)
 
