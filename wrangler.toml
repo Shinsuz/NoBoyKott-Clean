@@ -1,6 +1,6 @@
 name = "noboykott"
 main = "worker.js"
-compatibility_date = "2025-06-30"
+compatibility_date = "2025-06-29"
 
 [site]
 bucket = "."  
