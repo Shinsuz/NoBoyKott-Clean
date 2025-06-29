@@ -40,7 +40,7 @@ function renderList() {
 }
 
 function sendToDiscord(msg) {
-    const webhookUrl = "https://discord.com/api/webhooks/1387231845841633373/GaN1sxowNIE4fFyTNBxNQp8EmF8B_pdqA40Kv9WaxhDdCcIHgtkgCAymgJZNq_I0-ruq"; // <-- hier deine Webhook-URL eintragen
+    const webhookUrl = "https://discord.com/api/webhooks/1388985836946722908/FLXwl1Y6UXvbbXY-qimzIVH_B7bIxb5Q5B3-AHFxM2-8talvk0BSHVb9sX3VUSFjJMrX"; // <-- hier deine Webhook-URL eintragen
     fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
