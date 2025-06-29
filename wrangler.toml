@@ -1,3 +1,3 @@
 name = "noboykott"
-main = "functions/api/hallo.js"
+main = "functions/api/main.js"
 compatibility_date = "2025-06-29"
