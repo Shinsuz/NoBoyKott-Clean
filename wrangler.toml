@@ -1,3 +1,9 @@
 name = "noboykott"
-main = "functions/api/main.js"
+main = "worker.js"
 compatibility_date = "2025-06-29"
+
+[site]
+bucket = "./public"
+
+[env.production]
+bindings = [{ name = "ASSETS", type = "site" }]
