@@ -13,9 +13,6 @@ function clickedBox3(){
 function clickedBox4(){
     window.location.href = `./Empfehlungen/`;
 }
-function clickedBox5(){
-    window.location.href = `./Hadithe/`;
-}
 
 
 // Speichern der Buttonfunktion (!nicht ganz verstanden!)
