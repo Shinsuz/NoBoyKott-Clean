@@ -12,8 +12,8 @@
   --font-main: 'Poppins', sans-serif;
   --font-heading: 'Cormorant Garamond', serif;
   
-  --border-radius: 12px;
-  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --border-radius: 14px; /* Etwas runder */
+  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   --transition: all 0.3s ease;
 }
 
@@ -50,6 +50,7 @@ h1 {
   background-clip: text;
   color: transparent;
   animation: fadeIn 1s ease-in-out;
+  padding: 0 1rem;
 }
 
 /* ===== Linie unter dem Titel ===== */
@@ -57,7 +58,7 @@ h1 {
   border: none;
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(72, 149, 239, 0.5), transparent);
-  margin: 0 auto 2rem;
+  margin: 0 auto 3rem;
   width: 80%;
   max-width: 800px;
 }
@@ -66,54 +67,56 @@ h1 {
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1.5rem;
-  padding: 1.5rem;
+  gap: 1.8rem;
+  padding: 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-/* ===== Audio Item ===== */
+/* ===== Verfeinerte Audio Items ===== */
 .audio-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: var(--border-radius);
   padding: 1.5rem;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   transition: var(--transition);
   box-shadow: var(--box-shadow);
+  overflow: hidden;
 }
 
 .audio-item:hover {
   transform: translateY(-5px);
-  border-color: rgba(72, 149, 239, 0.3);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(72, 149, 239, 0.3);
 }
 
 .audio-title {
   display: block;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   color: var(--light);
   text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ===== Audio Player Styling ===== */
+/* ===== Optimierte Audio Player ===== */
 .audio-track {
   width: 100%;
-  border-radius: var(--border-radius);
-  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-/* Style für Audio Controls */
 audio::-webkit-media-controls-panel {
   background: rgba(67, 97, 238, 0.2);
   backdrop-filter: blur(5px);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  border-radius: 0 0 10px 10px;
 }
 
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button {
+audio::-webkit-media-controls-play-button {
   background-color: var(--primary-light);
   border-radius: 50%;
 }
@@ -121,14 +124,19 @@ audio::-webkit-media-controls-mute-button {
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
   color: var(--light);
+  font-family: var(--font-main);
+}
+
+audio::-webkit-media-controls-timeline {
+  border-radius: 10px;
 }
 
 /* ===== Loop Button ===== */
 #loopBtn {
   display: block;
-  width: 200px;
+  width: 220px;
   margin: 2rem auto;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.5rem;
   background: rgba(67, 97, 238, 0.3);
   color: var(--light);
   border: 1px solid var(--primary);
@@ -138,12 +146,13 @@ audio::-webkit-media-controls-time-remaining-display {
   transition: var(--transition);
   backdrop-filter: blur(5px);
   text-align: center;
+  font-weight: 500;
 }
 
 #loopBtn:hover {
   background: rgba(67, 97, 238, 0.5);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* ===== Home Button ===== */
@@ -153,13 +162,13 @@ audio::-webkit-media-controls-time-remaining-display {
   right: 1.5rem;
   background: rgba(67, 97, 238, 0.3);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   transition: var(--transition);
   cursor: pointer;
   z-index: 100;
@@ -168,15 +177,12 @@ audio::-webkit-media-controls-time-remaining-display {
 
 .home:hover {
   background: rgba(67, 97, 238, 0.5);
-  transform: scale(1.1);
+  transform: scale(1.1) rotate(15deg);
 }
 
 .home img {
   transition: var(--transition);
-}
-
-.home:hover img {
-  transform: rotate(15deg);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* ===== Animationen ===== */
@@ -185,7 +191,7 @@ audio::-webkit-media-controls-time-remaining-display {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== Responsive Design ===== */
+/* ===== Responsive Design (Handy) ===== */
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -194,19 +200,37 @@ audio::-webkit-media-controls-time-remaining-display {
   
   .container {
     grid-template-columns: 1fr;
-    padding: 1rem;
+    padding: 1.2rem;
+    gap: 1.5rem;
   }
   
   .audio-item {
-    padding: 1.2rem;
+    padding: 1.3rem;
+  }
+  
+  .audio-title {
+    font-size: 1.1rem;
+  }
+  
+  #loopBtn {
+    width: 180px;
+    padding: 0.7rem;
+    margin: 1.5rem auto;
   }
   
   .home {
-    width: 45px;
-    height: 45px;
+    width: 46px;
+    height: 46px;
     top: 1rem;
     right: 1rem;
   }
+}
+footer {
+  text-align: center;
+  padding: 2rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
 }
 
 @media (max-width: 480px) {
@@ -214,8 +238,17 @@ audio::-webkit-media-controls-time-remaining-display {
     font-size: 1.8rem;
   }
   
+  #line {
+    margin-bottom: 2rem;
+    width: 70%;
+  }
+  
+  .audio-item {
+    padding: 1.2rem;
+  }
+  
   #loopBtn {
-    width: 100%;
-    max-width: 200px;
+    width: 160px;
+    font-size: 0.9rem;
   }
 }

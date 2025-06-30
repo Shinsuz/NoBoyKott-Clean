@@ -1,150 +1,233 @@
-html{
-    scroll-behavior: smooth;
+/* ===== Grundlegende Stile ===== */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a0ca3;
+  --primary-light: #4895ef;
+  --accent: #4cc9f0;
+  --dark: #1a1a2e;
+  --darker: #16213e;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+  
+  --font-main: 'Poppins', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  
+  --border-radius: 12px;
+  --box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
 }
 
-@keyframes fadeIn{
-    from {opacity: 0;}
-    to {opacity: 1;}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1{
-    font-family: "Cormorant Garamond", serif;
-    color: steelblue;
-    animation: fadeIn 2s ease-in-out;
+html {
+  scroll-behavior: smooth;
 }
-
-/* Chat-artiges Design für Empfehlungen */
 
 body {
-    background: linear-gradient(to bottom, #2C3E50, #1A252F);
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--dark), var(--darker));
+  color: var(--light);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding: 20px;
 }
 
+/* ===== Typografie ===== */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0;
+  background: linear-gradient(to right, var(--accent), var(--primary-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ===== Linie unter dem Titel ===== */
+#line {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(72, 149, 239, 0.5), transparent);
+  margin: 0 auto 3rem;
+  width: 80%;
+  max-width: 800px;
+}
+
+/* ===== Container ===== */
 .container {
-    max-width: 420px;
-    margin: 40px auto;
-    background: rgba(255,255,255,0.10);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px 0 rgba(44,62,80,0.25);
-    padding: 24px 18px 18px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
+/* ===== Eingabebereich ===== */
 #inputField {
-    border-radius: 20px;
-    border: none;
-    padding: 12px 18px;
-    font-size: 1rem;
-    outline: none;
-    margin-bottom: 0;
-    background: rgba(255,255,255,0.7);
-    box-shadow: 0 2px 8px rgba(44,62,80,0.07);
-    width: 100%;
-    cursor: text;
-    animation: fadeIn 2s ease-in-out;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--light);
+  backdrop-filter: blur(5px);
+  margin-bottom: 1rem;
+  transition: var(--transition);
 }
 
+#inputField:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.3);
+}
+
+#inputField::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Speichern-Button ===== */
 #saveBtn {
-    border-radius: 20px;
-    border: none;
-    background: steelblue;
-    color: white;
-    padding: 10px 24px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 8px;
-    align-self: flex-end;
-    transition: background 0.2s;
-    animation: fadeIn 2s ease-in-out;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(67, 97, 238, 0.3);
+  color: var(--light);
+  border: 1px solid var(--primary);
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  backdrop-filter: blur(5px);
+  margin-bottom: 2rem;
 }
 
 #saveBtn:hover {
-    background: #1A252F;
+  background: rgba(67, 97, 238, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
+/* ===== Empfehlungsliste ===== */
 #list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-height: 320px;
-    overflow-y: auto;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 #list li {
-    align-self: flex-end;
-    background: linear-gradient(120deg, #6dd5ed 0%, #2193b0 100%);
-    color: white;
-    padding: 10px 18px;
-    border-radius: 18px 18px 4px 18px;
-    max-width: 80%;
-    word-break: break-word;
-    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
-    font-size: 1rem;
-    animation: chatIn 0.4s;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes chatIn {
-    from { opacity: 0; transform: translateY(30px);}
-    to { opacity: 1; transform: translateY(0);}
+#list li:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(5px);
 }
 
-.line{
-    border: none;
-    margin: 24px 0;
-    height: 0;
-    color: burlywood;
+/* ===== Home Button ===== */
+.home {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(67, 97, 238, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-.home{
-    position: fixed;
-    top: 0;
-    height: 30px;
-    width: 30px;
-    right: 5px;
-    background: transparent;
-}
-.home:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
+.home:hover {
+  background: rgba(67, 97, 238, 0.5);
+  transform: scale(1.1);
 }
 
+.home img {
+  transition: var(--transition);
+}
 
+.home:hover img {
+  transform: rotate(15deg);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== Animationen ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
-  body {
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .box {
-    width: 90%;
-    height: 160px;
-    margin: 20px 0;
-    font-size: 18px;
-  }
-
   h1 {
-    text-align: center;
-    font-size: 28px;
+    font-size: 2rem;
   }
-
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  #inputField, #saveBtn {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+  
+  #list li {
+    padding: 1rem;
+  }
+  
   .home {
-    top: 10px;
-    right: 10px;
-    width: 25px;
-    height: 25px;
+    width: 45px;
+    height: 45px;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  body {
+    padding: 15px;
+  }
+  
+  #inputField, #saveBtn {
+    font-size: 0.95rem;
+  }
+  
+  footer {
+    font-size: 0.8rem;
   }
 }
