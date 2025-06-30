@@ -1,20 +1,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="main.css?=v10">
+  <title>Islamische Ressourcen</title>
 </head>
 <body>
-  <h1><center>Homepage</center></h1>
-  <hr id="line">
+  <header>
+    <h1>Islamische Ressourcen</h1>
+    <p class="subtitle">Eine Sammlung wertvoller Inhalte</p>
+  </header>
+  
   <div class="container">
-    <div class="box" id="1" onclick="clickedBox1()">Quran Videos</div>
-    <div class="box" id="2" onclick="clickedBox2()">Nasheeds</div>
-    <div class="box" id="3" onclick="clickedBox3()">Wissen / Illim </div>
-    <div class="box" id="4" onclick="clickedBox4()">Empfehlungen</div>
-    <div class="box" id="5" onclick="clickedBox5()">Hadithe</div>
+    <div class="box" id="1" onclick="clickedBox1()">
+      <div class="box-content">
+        <h2>Quran Videos</h2>
+        <p class="box-description">Rezitationen und Erläuterungen</p>
+      </div>
+    </div>
+    <div class="box" id="2" onclick="clickedBox2()">
+      <div class="box-content">
+        <h2>Nasheeds</h2>
+        <p class="box-description">Islamische Gesänge</p>
+      </div>
+    </div>
+    <div class="box" id="3" onclick="clickedBox3()">
+      <div class="box-content">
+        <h2>Wissen / Ilm</h2>
+        <p class="box-description">Lehren und Weisheiten</p>
+      </div>
+    </div>
+    <div class="box" id="4" onclick="clickedBox4()">
+      <div class="box-content">
+        <h2>Empfehlungen</h2>
+        <p class="box-description">Ausgewählte Ressourcen</p>
+      </div>
+    </div>
+    <div class="box" id="5" onclick="clickedBox5()">
+      <div class="box-content">
+        <h2>Hadithe</h2>
+        <p class="box-description">Überlieferungen des Propheten</p>
+      </div>
+    </div>
   </div>
+  
   <div class="home">
-    <img src="home.png" alt="Logo" width="32" height="32">
+    <img src="home.png" alt="Startseite" width="32" height="32">
   </div>
+  
+  <footer>
+    <p>© 2025 | Alle Rechte vorbehalten</p>
+  </footer>
+  
   <script src="main.js?=v10" defer></script>
 </body>
