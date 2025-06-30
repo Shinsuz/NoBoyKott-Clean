@@ -1,11 +1,8 @@
-name = "noboykott"
-main = "worker.js"
+name               = "noboykott"
+main               = "worker.js"
 compatibility_date = "2025-06-29"
+workers_dev        = true
 
-[site]
-bucket = "."  
-
-[env.production]
-bindings = [
-  { name = "ASSETS", type = "site" }
+kv_namespaces = [
+  { binding = "__STATIC_CONTENT", id = "cdd71354447941f29589fce01756b27f" }
 ]
