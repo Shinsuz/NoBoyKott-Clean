@@ -18,6 +18,7 @@ function clickedBox5(){
     window.location.href = `./Dhikr/`;
 }
 
+
 // Speichern der Buttonfunktion (!nicht ganz verstanden!)
 
 document.addEventListener("DOMContentLoaded", () => {
