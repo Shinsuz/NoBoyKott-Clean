@@ -1,0 +1,18 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css?=v10">
+</head>
+<body>
+  <h1><center>Empfehlungen</center></h1>
+  <hr id="line">
+  <div class="container">
+   <input type="text" id="inputField" placeholder="Gib hier deine Empfehlung ein...">
+   <button id="saveBtn" onclick="click1()">Speichern</button>
+   <ul id="list"></ul>
+  </div>
+  <div class="home">
+    <img src="../home.png" alt="Logo" width="32" height="32" onclick=window.location.href='../index.html'>
+  </div>
+  <script src="main.js?=v10" defer></script>
+</body>
