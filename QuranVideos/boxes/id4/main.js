@@ -23,3 +23,25 @@ function openCurrentExtern() {
         alert("Starte zuerst ein Video.")
     }
 }
+
+let currentVideo = null;
+const loopBtn = document.getElementById('loopBtn');
+const videos = document.querySelectorAll('.container video');
+
+videos.forEach(video => {
+  video.addEventListener('play', function() {
+    currentVideo = this;
+    loopBtn.textContent = currentVideo.loop ? "🔁 Loop: An" : "🔁 Loop: Aus";
+    // Optional: andere Videos pausieren
+    videos.forEach(v => { if (v !== this) v.pause(); });
+  });
+});
+
+loopBtn.addEventListener('click', function() {
+  if (currentVideo) {
+    currentVideo.loop = !currentVideo.loop;
+    loopBtn.textContent = currentVideo.loop ? "🔁 Loop: An" : "🔁 Loop: Aus";
+  } else {
+    alert("Bitte starte zuerst ein Video, um Loop zu aktivieren.");
+  }
+});
