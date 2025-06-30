@@ -14,6 +14,9 @@ function clickedBox4(){
     window.location.href = `./Empfehlungen/`;
 }
 
+function clickedBox5(){
+    window.location.href = `./Dhikr/`;
+}
 
 // Speichern der Buttonfunktion (!nicht ganz verstanden!)
 
