@@ -1,25 +1,20 @@
 function clickedBox1() {
-   const base = window.location.pathname.split('/')[1]; 
-   window.location.href = `QuranVideos/`;
+   window.location.href = `./QuranVideos/`;
 }
 
 function clickedBox2(){
-    const base = window.location.pathname.split('/')[1];
-    window.location.href = `/.../Nasheeds/index.html`;
+    window.location.href = `./Nasheeds/`;
 }
 
 function clickedBox3(){
-    const base = window.location.pathname.split('/')[1];
-    window.location.href = `/.../Wissen/index.html`;
+    window.location.href = `./Wissen/`;
 }
 
 function clickedBox4(){
-    const base = window.location.pathname.split('/')[1];
-    window.location.href = `/.../Empfehlungen/index.html`;
+    window.location.href = `./Empfehlungen/`;
 }
 function clickedBox5(){
-    const base = window.location.pathname.split('/')[1];
-    window.location.href = `/.../Hadithe/index.html`;
+    window.location.href = `./Hadithe/`;
 }
 
 

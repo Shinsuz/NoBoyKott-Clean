@@ -16,12 +16,12 @@ export default {
     const url = new URL(request.url);
     let pathname = url.pathname;
 
-    // ✨ Rewrite für Ordnerpfade wie /Wissen oder /Nasheeds
+    
     if (!pathname.includes(".") && !pathname.endsWith("/")) {
-      pathname += "/"; // mache z.B. /Wissen → /Wissen/
+      pathname += "/"; 
     }
     if (pathname.endsWith("/")) {
-      pathname += "index.html"; // z.B. /Wissen/ → /Wissen/index.html
+      pathname += "index.html"; 
     }
 
     const parts = pathname.slice(1).split(".");
@@ -48,3 +48,5 @@ export default {
     });
   }
 };
+
+
