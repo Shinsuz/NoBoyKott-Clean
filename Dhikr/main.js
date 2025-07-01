@@ -24,7 +24,8 @@ function counter() {
     { id: 21, name: "Aʿūdhu bi-kalimāti llāhi t-tāmmāti min sharri mā khalaq", text: "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ", count: 0, source: "Sahih Muslim 2708, Sunan Ibn Majah 3547" , reward: "Wer diesen Dhikr an einem Ort sagt an dem man gelangt ist (beispielsweise wegen einer Reise), dem wird Schutz vor dem Bösen gewährt und ihm kann nichts schaden bis er weitermarschiert"},
     { id: 22, name: "Lā ilāha illallāhu l-ʿAẓīmu l-Ḥalīmu, lā ilāha illallāhu rabbu l-ʿarshi l-ʿaẓīm", text: "لَا إِلَٰهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَٰهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ", count: 0, source: "Sahih al-Bukhari 6345, Sahih Muslim 2730a", reward: "In Not & in Schwierigkeiten"},
     { id: 23, name: "Yā Ḥayyu yā Qayyūm, bi-raḥmatika astaghīth", text: "يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ", count: 0, source: "Sunan at-Tirmidhi 3524", reward: "In Not & in Schwierigkeiten"},
-  ];
+    {},
+  ];  
 
    // LocalStorage Funktionen
   function saveCounters() {
