@@ -24,8 +24,13 @@ function counter() {
     { id: 21, name: "Aʿūdhu bi-kalimāti llāhi t-tāmmāti min sharri mā khalaq", text: "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ", count: 0, source: "Sahih Muslim 2708, Sunan Ibn Majah 3547" , reward: "Wer diesen Dhikr an einem Ort sagt an dem man gelangt ist (beispielsweise wegen einer Reise), dem wird Schutz vor dem Bösen gewährt und ihm kann nichts schaden bis er weitermarschiert"},
     { id: 22, name: "Lā ilāha illallāhu l-ʿAẓīmu l-Ḥalīmu, lā ilāha illallāhu rabbu l-ʿarshi l-ʿaẓīm", text: "لَا إِلَٰهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ، لَا إِلَٰهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ", count: 0, source: "Sahih al-Bukhari 6345, Sahih Muslim 2730a", reward: "In Not & in Schwierigkeiten"},
     { id: 23, name: "Yā Ḥayyu yā Qayyūm, bi-raḥmatika astaghīth", text: "يَا حَيُّ يَا قَيُّومُ، بِرَحْمَتِكَ أَسْتَغِيثُ", count: 0, source: "Sunan at-Tirmidhi 3524", reward: "In Not & in Schwierigkeiten"},
-    {},
+    { id: 24, name: "", text: "", count: 0, source: "", reward: ""},
   ];  
+
+  // Aufnahme
+  let currentRecordingId = null;
+  let recordingInterval = null
+  let lastDhikrTime = 0;
 
    // LocalStorage Funktionen
   function saveCounters() {
@@ -44,13 +49,15 @@ function counter() {
   }
 
   // Dhikr-Boxen erstellen
-  function createDhikrBoxes() {
+ function createDhikrBoxes() {
     const container = document.getElementById('dhikr-container');
     container.innerHTML = '';
 
     dhikrs.forEach(dhikr => {
       const box = document.createElement('div');
       box.className = 'dhikr-box';
+      
+      const isRecording = currentRecordingId === dhikr.id;
       
       const sourceInfo = (dhikr.source || dhikr.reward) ? `
         <div class="source-info">
@@ -68,11 +75,73 @@ function counter() {
           <button class="btn increment" data-id="${dhikr.id}">+</button>
         </div>
         ${sourceInfo}
-        <button class="reset-btn" data-id="${dhikr.id}">Reset</button>
+        <div class="action-buttons">
+          <button class="reset-btn" data-id="${dhikr.id}">Reset</button>
+          <button class="record-btn ${isRecording ? 'recording' : ''}" data-id="${dhikr.id}">
+            ${isRecording ? 'Aufnahme stoppen' : 'Aufnahme starten'}
+          </button>
+        </div>
       `;
       container.appendChild(box);
     });
   }
+
+ // Spracherkennung starten
+  function startSpeechRecognition(id) {
+    // Browser-Support prüfen
+    if (!('webkitSpeechRecognition' in window)) {
+      alert("Spracherkennung wird in diesem Browser nicht unterstützt!");
+      return;
+    }
+
+    // Vorherige Aufnahme stoppen
+    if (currentRecordingId !== null) {
+      stopSpeechRecognition();
+    }
+
+    // Neue Spracherkennung initialisieren
+    recognition = new webkitSpeechRecognition();
+    recognition.continuous = true;
+    recognition.interimResults = false;
+    recognition.lang = 'ar'; // Arabisch als Primärsprache
+
+    currentRecordingId = id;
+    createDhikrBoxes();
+
+    recognition.onresult = (event) => {
+      const now = Date.now();
+      // Mindestens 1 Sekunde zwischen den Erkennungen
+      if (now - lastDhikrTime < 1000) return;
+      
+      const transcript = event.results[event.results.length-1][0].transcript.trim();
+      const dhikr = dhikrs.find(d => d.id === id);
+      
+      // Einfache Erkennung (kann erweitert werden)
+      if (dhikr && transcript.length > 0) {
+        dhikr.count++;
+        updateCounter(id, dhikr.count);
+        saveCounters();
+        lastDhikrTime = now;
+      }
+    };
+
+    recognition.onerror = (event) => {
+      console.error("Spracherkennungsfehler:", event.error);
+      stopSpeechRecognition();
+    };
+
+    recognition.start();
+  }
+
+  function stopSpeechRecognition() {
+    if (recognition) {
+      recognition.stop();
+    }
+    recognition = null;
+    currentRecordingId = null;
+    createDhikrBoxes();
+  }
+
 
   // Zähler aktualisieren
   function updateCounter(id, value) {
@@ -107,7 +176,13 @@ function counter() {
         dhikr.count = 0;
         updateCounter(id, dhikr.count);
       }
-
+     else if (target.classList.contains('record-btn')) {
+        if (currentRecordingId === id) {
+          stopSpeechRecognition();
+        } else {
+          startSpeechRecognition(id);
+        }
+      }
       saveCounters();
     });
   }
