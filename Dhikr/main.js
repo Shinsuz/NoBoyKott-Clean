@@ -1,7 +1,7 @@
 function counter() {
   // Dhikr-Daten
   const dhikrs = [
-    { id: 1, name: "100x Subhanallah", text: "سُبْحَانَ اللَّهِ", count: 0 , source: "Tirmidhi 3463, Sahih Muslim 2698" , reward: "eintausend gute Taten oder eintausend Sünden werden getilgt" },
+    { id: 1, name: "100x Subhanallah", text: "سُبْحَانَ اللَّهِ", count: 0 , source: "Tirmidhi 3463, Sahih Muslim 2698" , reward: "Eintausend gute Taten oder eintausend Sünden werden getilgt" },
     { id: 2, name: "Alhamdulillah", text: "الْحَمْدُ لِلَّهِ", count: 0 },
     { id: 3, name: "Allahu Akbar", text: "اللَّهُ أَكْبَرُ", count: 0 },
     { id: 4, name: "Astaghfirullah", text: "أَسْتَغْفِرُ اللَّه", count: 0, source: "Sunan Abi Dawud 1518", reward: "Wer häufig Astaghfirullāh sagt, dem wird Allah einen Ausweg aus jeder Bedrängnis verschaffen   "},
