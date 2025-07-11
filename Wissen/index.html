@@ -2,13 +2,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="main.css?=v10">
+  <title>NoBoyKott</title>
 </head>
 <body>
   <h1><center>Wissen</center></h1>
   <hr id="line">
-  <div class="container">
-      <input type="text" id="EingabeFeld" placeholder="Suche hier nach etwas...">
-      <div id="wissenContent"></div>
+   <div class="container">
+    <div class="box" id="1" onclick="clickedBox1()">
+      <div class="box-content">
+        <h2>Sunnah</h2>
+        <p class="box-description">Das Wissen über die Sunnah des Propheten ﷺ</p>
+      </div>
+    </div>
+    <div class="box" id="2" onclick="clickedBox2()">
+      <div class="box-content">
+        <h2>Hadithe</h2>
+        <p class="box-description">Die Überliefierungen des Propheten ﷺ</p>
+      </div>
+    </div>
+    <div class="box" id="3" onclick="clickedBox3()">
+      <div class="box-content">
+        <h2>Gelehrte</h2>
+        <p class="box-description">Über das Leben der Gelehrten und ihre Werke</p>
+      </div>
+    </div>
+    <div class="box" id="4" onclick="clickedBox4()">
+      <div class="box-content">
+        <h2>Madhabs</h2>
+        <p class="box-description">Über die vier fundamentalen Rechtsschulen und ihre Bedeutsamkeit</p>
+      </div>
+    </div>
   </div>
  <div class="home">
     <img src="../home.png" alt="Logo" width="32" height="32" onclick=window.location.href='../index.html'>
@@ -17,5 +40,4 @@
     <p>© 2025 | Alle Rechte vorbehalten</p>
   </footer>
 </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script src="main.js?=v10" defer></script>
+ <script src="main.js?=v10" defer></script>
